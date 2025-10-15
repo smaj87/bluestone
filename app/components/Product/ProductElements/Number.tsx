@@ -1,11 +1,6 @@
-import {
-  FC,
-  memo,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'utils/react';
+import { FC, memo, useCallback } from 'utils/react';
+
+import { useEditableField } from './useEditableField';
 
 interface Props {
   number: string;
@@ -13,48 +8,26 @@ interface Props {
 }
 
 const Number: FC<Props> = ({ number, onUpdate }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editValue, setEditValue] = useState(number);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (isEditing && inputRef.current) {
-      inputRef.current.focus();
-      inputRef.current.select();
-    }
-  }, [isEditing]);
-
-  const onEdit = useCallback(() => {
-    setEditValue(number);
-    setIsEditing(true);
-  }, [number]);
-
-  const onSave = useCallback(() => {
-    if (editValue.trim() !== '' && editValue !== number) {
-      onUpdate('number', editValue.trim());
-    }
-    setIsEditing(false);
-  }, [editValue, number, onUpdate]);
-
-  const onCancel = useCallback(() => {
-    setEditValue(number);
-    setIsEditing(false);
-  }, [number]);
-
-  const onKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === 'Enter') {
-        onSave();
-      } else if (e.key === 'Escape') {
-        onCancel();
-      }
+  const handleSave = useCallback(
+    (value: string) => {
+      onUpdate('number', value);
     },
-    [onSave, onCancel],
+    [onUpdate],
   );
 
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setEditValue(e.currentTarget.value);
-  }, []);
+  const {
+    editValue,
+    inputRef,
+    isEditing,
+    onCancel,
+    onChange,
+    onEdit,
+    onKeyDown,
+    onSave,
+  } = useEditableField({
+    initialValue: number,
+    onSave: handleSave,
+  });
 
   return (
     <div className="mb-8 bg-white p-6 rounded-lg shadow-sm">
@@ -64,7 +37,7 @@ const Number: FC<Props> = ({ number, onUpdate }) => {
       {isEditing ? (
         <div className="flex items-center gap-2">
           <input
-            ref={inputRef}
+            ref={inputRef as React.RefObject<HTMLInputElement>}
             className="text-2xl font-bold text-gray-900 border-2 border-blue-500 rounded px-2 py-1 flex-1"
             onChange={onChange}
             onKeyDown={onKeyDown}

@@ -37,7 +37,7 @@ const Product: FC<Props> = ({ name }) => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <Number number={product.number} onUpdate={onUpdate} />
-      <Description description={product.description} />
+      <Description description={product.description} onUpdate={onUpdate} />
       <Images images={product.images} />
     </div>
   );
