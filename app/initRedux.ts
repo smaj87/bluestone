@@ -1,12 +1,7 @@
-import { ThunkDispatch } from 'commons/utils/react-redux';
-import { UnknownAction } from 'commons/utils/redux';
+import { ThunkDispatch } from 'utils/react-redux';
+import { UnknownAction } from 'utils/redux';
 
-import { NAME as APP_KEY } from 'containers/App/constants';
-import appReducer from 'containers/App/reducer';
-
-export const reducers = {
-  [APP_KEY]: appReducer,
-} as const;
+export const reducers = {} as const;
 
 export const middlewares = [];
 

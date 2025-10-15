@@ -3,22 +3,12 @@ import path from 'path';
 export default {
   modules: ['node_modules', 'app'],
   alias: {
-    ...(process.env.IS_PREACT === 'TRUE'
-    ? {
-        react: 'preact/compat'
-        ,
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat', // Must be below test-utils
-        'react-dom/client': 'preact/compat/client', // Must be below test-utils
-        'react/jsx-runtime': 'preact/jsx-runtime',
-      } : {}),
-
     root: path.resolve(process.cwd(), './'),
     utils: path.resolve(process.cwd(), 'app/utils'),
     containers: path.resolve(process.cwd(), 'app/containers'),
-    hoc: path.resolve(process.cwd(), 'app/containers/HOC'),
+    images: path.resolve(process.cwd(), 'app/images'),
     components: path.resolve(process.cwd(), 'app/components'),
-    commons: path.resolve(process.cwd(), 'app/commons'),
+    db: path.resolve(process.cwd(), 'app/db'),
   },
   extensions: [
     `.${process.env.APP}.js`,

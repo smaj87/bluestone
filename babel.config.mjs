@@ -1,21 +1,8 @@
-import babelMinifyTemplateLiterals from './babel-plugins/babel-minify-literals/index.cjs';
-import babelRemoveCypressId from './babel-plugins/babel-remove-cypress-id.cjs';
-import babelRemoveDisplayName from './babel-plugins/babel-remove-display-name.mjs';
-
 export default (() => {
-  let babelPlugins = [
+  const babelPlugins = [
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-class-properties',
-    babelMinifyTemplateLiterals,
-    babelRemoveDisplayName,
   ];
-
-  if (
-    process.env.NODE_ENV === 'production' &&
-    process.env.TEST_ENVIRONMENT !== 'true'
-  ) {
-    babelPlugins = [...babelPlugins, babelRemoveCypressId];
-  }
 
   return {
     assumptions: {
@@ -51,7 +38,7 @@ export default (() => {
         '@babel/preset-react',
         {
           runtime: 'automatic',
-          importSource: 'react',
+          importSource: 'preact',
         },
       ],
       ['@babel/preset-typescript'],

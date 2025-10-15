@@ -150,13 +150,6 @@ module.exports = {
           [
             '^(?!components|constants|containers|hooks|hoc|images|translations|utils)@?\\w',
           ],
-          [
-            'commons',
-            'commonElements',
-            'commonModules',
-            'commonUtils',
-            'commonVariables',
-          ],
           ['^'],
           ['^\\.'],
         ],
@@ -181,18 +174,12 @@ module.exports = {
           resolve: {
             modules: ['node_modules', 'app', 'cypress'],
             alias: {
-              // react: 'preact/compat',
-              // 'react-dom/test-utils': 'preact/test-utils',
-              // 'react-dom': 'preact/compat', // Must be below test-utils
-              // 'react-dom/client': 'preact/compat/client', // Must be below test-utils
-              // 'react/jsx-runtime': 'preact/jsx-runtime',
-
               root: path.resolve(__dirname, ''),
               utils: path.resolve(__dirname, 'app/utils'),
               containers: path.resolve(__dirname, 'app/containers'),
-              hoc: path.resolve(__dirname, 'app/containers/HOC'),
+              images: path.resolve(__dirname, 'app/images'),
               components: path.resolve(__dirname, 'app/components'),
-              commons: path.resolve(__dirname, 'app/commons'),
+              db: path.resolve(__dirname, 'app/db'),
             },
             extensions: ['.js', '.jsx', '.ts', '.tsx', '.react.js'],
             mainFields: ['browser', 'jsnext:main', 'main'],

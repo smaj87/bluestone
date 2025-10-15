@@ -7,17 +7,12 @@
     "jsxFragmentFactory": "Fragment",
     "baseUrl": "app",
     "paths": {
-      "commons/*": ["commons/*"],
       "components/*": ["components/*"],
       "containers/*": ["containers/*"],
-      "hooks/*": ["hooks/*"],
-      "hoc/*": ["containers/HOC/*"],
       "images/*": ["images/*"],
+      "db/*": ["db/*"],
       "translations/*": ["translations/*"],
       "utils/*": ["utils/*"]
-      // "react": ["./node_modules/preact/compat/"],
-      // "react-dom": ["./node_modules/preact/compat/"],
-      // "react-dom/client": ["./node_modules/preact/compat/client"]
     },
     "module": "esnext",
     "target": "esnext",

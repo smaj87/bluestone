@@ -4,11 +4,10 @@ import './styles/tailwind.css';
 
 import { setGlobalDevModeChecks } from 'reselect';
 
-import ErrorBoundary from 'commons/ErrorBoundary';
-import { createRoot } from 'commons/utils/react';
-
+import ErrorBoundary from 'components/ErrorBoundary';
 // Import root app
 import App from 'containers/App';
+import { createRoot } from 'utils/react';
 
 // disabled reselect v5 warnings: https://reselect.js.org/api/development-only-stability-checks/#2-per-selector-by-passing-an-identityfunctioncheck-option-directly-to-
 setGlobalDevModeChecks({

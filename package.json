@@ -13,7 +13,7 @@
   "author": "Sebastian Maj",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env APP=bluestone NODE_ENV=production IS_PREACT=TRUE webpack --config webpack/webpack.prod.babel.mjs --color --progress",
+    "build": "cross-env APP=bluestone NODE_ENV=production webpack --config webpack/webpack.prod.babel.mjs --color --progress",
     "check-types": "tsc --noEmit",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint app/**/*.{js,jsx,ts,tsx}",
@@ -24,12 +24,13 @@
     "presetup": "npm i chalk shelljs",
     "prestart:prod": "cross-env APP=bluestone NODE_ENV=production IS_START_LOCAL_PROD=true npm run build",
     "prettify": "prettier --write",
-    "start": "cross-env APP=bluestone NODE_ENV=development IS_PREACT=TRUE node server/index.mjs",
-    "start:prod": "cross-env APP=bluestone NODE_ENV=production IS_START_LOCAL_PROD= IS_PREACT=TRUE node server/index.mjs"
+    "start": "cross-env APP=bluestone NODE_ENV=development  node server/index.mjs",
+    "start:prod": "cross-env APP=bluestone NODE_ENV=production IS_START_LOCAL_PROD=true node server/index.mjs"
   },
   "pre-commit": "lint:staged",
   "dependencies": {
     "history": "5.3.0",
+    "idb": "8.0.3",
     "preact": "10.26.9",
     "re-reselect": "5.1.0",
     "redux": "5.0.1",

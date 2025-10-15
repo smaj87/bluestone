@@ -1,6 +1,5 @@
-import { FC, memo } from 'commons/utils/react';
-
 import logo from 'images/logo.png';
+import { FC, memo } from 'utils/react';
 
 const Navbar: FC = () => (
   <nav className="fixed top-0 left-0 right-0 bg-gray-800 h-20 z-50">

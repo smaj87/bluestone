@@ -1,2 +1,0 @@
-export const SLOT_FLAT_IMAGE_SIZE_DESKTOP_CSS = 4;
-export const SLOT_FLAT_IMAGE_SIZE_MOBILE_CSS = 6.4;

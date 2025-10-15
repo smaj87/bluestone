@@ -1,3 +1,0 @@
-@function calc-size($size) {
-  @return calc(#{$size} * 1/16 * 1.6) // TODO 1.6 do usunięcia po zejści z font-size: 10px w html
-}

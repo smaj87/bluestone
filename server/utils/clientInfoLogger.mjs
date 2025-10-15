@@ -4,8 +4,7 @@ import { dirVersion } from './version.mjs';
 
 const divider = chalk.green('\n---------------------------------------');
 
-const libName =
-  process.env.IS_PREACT === 'TRUE' ? chalk.green('preact') : chalk.red('react');
+const libName = chalk.green('preact');
 const version = `(${chalk.gray(dirVersion)})`;
 
 export default () => {

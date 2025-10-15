@@ -135,8 +135,6 @@ export default (options) => ({
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
       IS_START_LOCAL_PROD: false,
-      IS_PREACT: true,
-      TEST_ENVIRONMENT: process.env.TEST_ENVIRONMENT || 'false',
       ...clientConfig.default.config,
     }),
   ]),

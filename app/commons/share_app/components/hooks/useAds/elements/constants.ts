@@ -1,3 +1,0 @@
-export const SLOT_INBOX_SM_HEIGHT_ABOVE_MD = 32;
-export const SLOT_INBOX_MD_HEIGHT_ABOVE_MD = 56;
-export const SLOT_INBOX_LG_HEIGHT_ABOVE_MD = 72;
