@@ -1,5 +1,6 @@
 import { ErrorInfo, PureComponent, ReactNode } from 'utils/react';
 
+import ErrorPage from './ErrorPage';
 import { reportCatchError } from './utils';
 
 interface Props {
@@ -20,7 +21,7 @@ class ErrorBoundary extends PureComponent<Props, State> {
   }
 
   render() {
-    return this.state.hasError ? <h1>Błąd aplikacji</h1> : this.props.children;
+    return this.state.hasError ? <ErrorPage /> : this.props.children;
   }
 }
 

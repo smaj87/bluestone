@@ -1,7 +1,11 @@
+import { KEY as PRODUCTS_KEY } from 'containers/Products/constants';
+import productsReducer from 'containers/Products/reducer';
 import { ThunkDispatch } from 'utils/react-redux';
 import { UnknownAction } from 'utils/redux';
 
-export const reducers = {} as const;
+export const reducers = {
+  [PRODUCTS_KEY]: productsReducer,
+} as const;
 
 export const middlewares = [];
 
