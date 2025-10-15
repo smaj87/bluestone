@@ -1,0 +1,35 @@
+export const neutralTheme = {
+  '--cc-component-color-special': '#ffd200',
+  '--cc-component-bg': '#fff',
+  '--cc-txt--primary': '#1e1e1e',
+  '--cc-txt--secondary': '#606060',
+  '--cc-mark-txt': '#fff',
+  '--cc-mark-bg': '#dc2664',
+  '--cc-badge-txt': '#000',
+
+  '--modal-constant-bg': '#fff',
+  '--modal-constant-txt': '#000',
+  '--modal-constant-shadow': 'rgba(0, 0, 0, 0.3)',
+  '--modal-constant-line': '#e5e5e5',
+  '--modal-constant-close-border': 'transparent',
+  '--modal-constant-close-border--hover': '#d3d3d3',
+  '--modal-constant-close-bg': 'transparent',
+  '--modal-constant-close-bg--hover': '#d3d3d3',
+  '--modal-constant-close-txt': '#000',
+  '--modal-constant-close-txt--hover': '#000',
+  '--modal-constant-tile-border': '#e5e5e5',
+  '--modal-constant-tile-bg': '#fff',
+  '--modal-constant-tile-txt': '#000',
+
+  '--neutral-bg': '#fff',
+  '--neutral-border': '#e3e3e3',
+  '--neutral-txt--primary': '#000',
+  '--neutral-txt--secondary': '#8c8c8c',
+
+  '--tile-border': '#e5e5e5',
+  '--tile-bg': '#fff',
+  '--tile-txt': '#000',
+
+  '--shopping-state-bg--error': '#fdd8d8',
+  '--shopping-state-bg--success': 'rgba(151, 189, 50, 0.2)',
+};

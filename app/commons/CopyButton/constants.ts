@@ -1,0 +1,1 @@
+export const CLOUD_ANIMATION_TIME = 850;

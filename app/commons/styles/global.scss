@@ -1,0 +1,143 @@
+$LAYER_MODAL: '' !default;
+$LAYER_TOOLBAR_SUBMENU: '' !default;
+$LAYER_DROPDOWNS: '' !default;
+$LAYER_TOOLTIPS: '' !default;
+$LAYER_NEW_MAIL: '' !default;
+$LAYER_SIDE_PANEL: '' !default;
+$LAYER_BANNERS: '' !default;
+$IS_MODAL_OPEN_CLASS: '' !default;
+$IS_SIDE_PANEL_OPEN_CLASS: '' !default;
+$IS_SUBMENU_OPEN_CLASS: '' !default;
+$IS_BANNER_OPEN_CLASS: '' !default;
+$IS_SIDEBAR_OPEN_CLASS: '' !default;
+$screenMdAbove: '' !default;
+$VISUALLY_HIDDEN_CLASS: '' !default;
+$VISUALLY_HIDDEN_FOCUSABLE_CLASS: '' !default;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg); /* (kolor uchwytu) (kolor tła) */
+
+  &::selection {
+    background: var(--app-primary-bg);
+    color: var(--app-primary-txt);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-bg);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-bg--hover);
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html {
+  -webkit-tap-highlight-color: var(--tap-bg);
+  background: var(--app-bg);
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 300px;
+}
+
+a,
+button,
+textarea,
+input,
+select {
+  &:focus-visible {
+    outline: 0.2rem solid var(--focus-border--primary);
+    outline-offset: 0.2rem;
+    box-shadow: 0 0 0 0.1rem var(--focus-border--secondary);
+  }
+}
+
+.app-container {
+  width: 100%;
+}
+
+.app-modals {
+  position: relative;
+  z-index: #{$LAYER_MODAL};
+}
+
+.app-submenus {
+  position: relative;
+  z-index: #{$LAYER_TOOLBAR_SUBMENU};
+}
+
+.app-dropdowns {
+  position: relative;
+  z-index: #{$LAYER_DROPDOWNS};
+}
+
+.app-tooltips {
+  position: relative;
+  z-index: #{$LAYER_TOOLTIPS};
+}
+
+.app-newmail {
+  position: relative;
+  z-index: #{$LAYER_NEW_MAIL};
+}
+
+.app-side-panels {
+  position: relative;
+  z-index: #{$LAYER_SIDE_PANEL};
+}
+
+.app-banners {
+  position: relative;
+  z-index: #{$LAYER_BANNERS};
+}
+
+.#{$IS_MODAL_OPEN_CLASS},
+.#{$IS_SIDE_PANEL_OPEN_CLASS} {
+  overflow: hidden;
+}
+
+.#{$IS_SUBMENU_OPEN_CLASS},
+.#{$IS_BANNER_OPEN_CLASS},
+.#{$IS_SIDEBAR_OPEN_CLASS} {
+  /* komponenty wyświetlane jedynie na mobile */
+  @media screen and (max-width: #{$screenMdAbove}) {
+    overflow: hidden;
+  }
+}
+
+.#{$VISUALLY_HIDDEN_CLASS},
+.#{$VISUALLY_HIDDEN_FOCUSABLE_CLASS}:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

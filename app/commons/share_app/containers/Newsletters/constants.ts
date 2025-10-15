@@ -1,0 +1,36 @@
+export const KEY = 'newsletters';
+
+export const PAGE_NAME = 'NEWSLETTERS_PAGE';
+
+export const NEWSLETTERS_LIST_CONTAINER_ID = 'js_NewslettersListContainer';
+export const NEWSLETTER_ITEM_ID_PREFIX = 'NewsletterItem';
+
+export const FETCH_NEWSLETTERS = `${KEY}/FETCH_NEWSLETTERS` as const;
+export const FETCH_NEWSLETTERS_SUCCESS =
+  `${FETCH_NEWSLETTERS}_SUCCESS` as const;
+export const FETCH_NEWSLETTERS_FAILURE =
+  `${FETCH_NEWSLETTERS}_FAILURE` as const;
+
+export const SET_LAST_SHOWN_ID = `${KEY}/SET_LAST_SHOWN_ID` as const;
+
+export const UNSUBSCRIBE_NEWSLETTER = `${KEY}/UNSUBSCRIBE_NEWSLETTER` as const;
+export const UNSUBSCRIBE_NEWSLETTER_SUCCESS =
+  `${UNSUBSCRIBE_NEWSLETTER}_SUCCESS` as const;
+export const UNSUBSCRIBE_NEWSLETTER_FAILURE =
+  `${UNSUBSCRIBE_NEWSLETTER}_FAILURE` as const;
+
+export const REMOVE_NEWSLETTER_MAILS =
+  `${KEY}/REMOVE_NEWSLETTER_MAILS` as const;
+export const REMOVE_NEWSLETTER_MAILS_SUCCESS =
+  `${REMOVE_NEWSLETTER_MAILS}_SUCCESS` as const;
+export const REMOVE_NEWSLETTER_MAILS_FAILURE =
+  `${REMOVE_NEWSLETTER_MAILS}_FAILURE` as const;
+
+export const DELETE_MAILS_FROM_NEWSLETTER =
+  `${KEY}/DELETE_MAILS_FROM_NEWSLETTER` as const;
+
+export const SORT_NEWSLETTERS = `${KEY}/SORT_NEWSLETTERS` as const;
+
+export const DELETE_MAILS_NEWSLETTER_DAYS_COUNT = 30;
+
+export const NEWSLETTERS_URL = 'Newslettery';
