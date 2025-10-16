@@ -78,7 +78,8 @@ export const deleteProduct =
         },
       });
 
-      await db_deleteProduct(name);
+      // nie czekamy, od razu kończymy akcje
+      db_deleteProduct(name);
     } catch {
       // happy flow
     }
@@ -101,7 +102,8 @@ export const updateProduct =
         },
       });
 
-      await db_updateProduct(updatedProduct);
+      // nie czekamy, od razu kończymy akcje
+      db_updateProduct(updatedProduct);
     } catch {
       // happy flow
     }
@@ -125,7 +127,8 @@ export const addProduct =
         },
       });
 
-      await db_addProduct(product);
+      // nie czekamy, od razu kończymy akcje
+      db_addProduct(product);
     } catch {
       // happy flow
     }
