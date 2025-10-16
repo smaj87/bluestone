@@ -7,7 +7,7 @@ interface ErrorPageProps {
 }
 
 const ErrorPage: FC<ErrorPageProps> = ({ label }) => {
-  const handleRetry = useCallback(() => {
+  const onRetry = useCallback(() => {
     dispatch(fetchProducts());
   }, []);
 
@@ -35,7 +35,7 @@ const ErrorPage: FC<ErrorPageProps> = ({ label }) => {
         </p>
         <button
           className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          onClick={handleRetry}
+          onClick={onRetry}
           type="button"
         >
           Spróbuj ponownie

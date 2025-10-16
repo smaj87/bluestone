@@ -18,7 +18,7 @@ const Product: FC<Props> = ({ name }) => {
   const product = useSelector(getProductByName, name);
 
   const onUpdate = useCallback(
-    (key: keyof ProductType, value: string) => {
+    (key: keyof ProductType, value: string | ProductType['images']) => {
       dispatch(updateProduct(name, { [key]: value }));
     },
     [name],
@@ -38,7 +38,7 @@ const Product: FC<Props> = ({ name }) => {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <Number number={product.number} onUpdate={onUpdate} />
       <Description description={product.description} onUpdate={onUpdate} />
-      <Images images={product.images} />
+      <Images images={product.images} onUpdate={onUpdate} />
     </div>
   );
 };

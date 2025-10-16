@@ -1,3 +1,4 @@
+import AddProduct from 'components/Products/AddProduct';
 import Content from 'components/Products/Content';
 import { FC, memo } from 'utils/react';
 
@@ -6,7 +7,10 @@ import Hooks from './Hooks';
 const Products: FC = () => (
   <div>
     <Hooks />
-    <h1 className="text-2xl font-bold mb-4">Products</h1>
+    <div className="flex items-center justify-between mb-4">
+      <h1 className="text-2xl font-bold">Products</h1>
+      <AddProduct />
+    </div>
     <Content />
   </div>
 );

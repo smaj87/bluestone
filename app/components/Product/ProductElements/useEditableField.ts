@@ -29,6 +29,7 @@ export const useEditableField = ({
     if (editValue.trim() !== '' && editValue !== initialValue) {
       onSave(editValue.trim());
     }
+
     setIsEditing(false);
   }, [editValue, initialValue, onSave]);
 

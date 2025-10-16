@@ -1,3 +1,4 @@
+import DeleteIcon from 'components/DeleteIcon';
 import { deleteProduct } from 'containers/Products/actions';
 import { ITEM_HEIGHT } from 'containers/Products/constants';
 import { getProductByName } from 'containers/Products/selectors';
@@ -58,6 +59,7 @@ const ProductItem: FC<Props> = ({ name }) => {
           onClick={onDelete}
           type="button"
         >
+          <DeleteIcon className="w-4 h-4 mr-1 inline" />
           Usuń
         </button>
       </div>

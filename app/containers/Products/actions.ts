@@ -1,4 +1,5 @@
 import {
+  addProduct as db_addProduct,
   deleteProduct as db_deleteProduct,
   getAllProducts,
   updateProduct as db_updateProduct,
@@ -101,6 +102,30 @@ export const updateProduct =
       });
 
       await db_updateProduct(updatedProduct);
+    } catch {
+      // happy flow
+    }
+  };
+
+export const addProduct =
+  (product: Product): AppThunk =>
+  async (dispatch, getState) => {
+    try {
+      const products = getProducts(getState());
+
+      // happy flow - optymistyczna aktualizacja stanu
+      dispatch({
+        type: FETCH_PRODUCTS,
+        payload: {
+          ...getProductsForVirtualization(
+            [...Object.values(products), product],
+            GROUP_COUNT,
+            ITEM_HEIGHT,
+          ),
+        },
+      });
+
+      await db_addProduct(product);
     } catch {
       // happy flow
     }
